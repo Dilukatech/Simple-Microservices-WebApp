@@ -5,5 +5,5 @@ import com.example.departmentservice.dto.DepartmentDto;
 public interface DepartmentService {
     DepartmentDto saveDepartment(DepartmentDto departmentDto);
 
-    DepartmentDto getDepartmentByDepartmentCode(String departmentCode);
+    DepartmentDto getDepartmentByDepartmentCode(String code);
 }

@@ -1,5 +1,6 @@
 package com.example.employeeservice.controller;
 
+import com.example.employeeservice.dto.ApiResponceDto;
 import com.example.employeeservice.dto.EmployeeDto;
 import com.example.employeeservice.service.EmployeeService;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,8 @@ public class EmployeeController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<EmployeeDto> getEmployee(@PathVariable Long id){
-        EmployeeDto employeeDto = employeeService.getEmployeeById(id);
-        return new ResponseEntity<>(employeeDto,HttpStatus.OK);
+    public ResponseEntity<ApiResponceDto> getEmployee(@PathVariable(value ="id") Long id){
+        ApiResponceDto apiResponceDto = employeeService.getEmployeeById(id);
+        return new ResponseEntity<>(apiResponceDto,HttpStatus.OK);
     }
 }

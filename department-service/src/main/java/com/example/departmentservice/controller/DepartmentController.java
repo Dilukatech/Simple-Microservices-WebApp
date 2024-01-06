@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/department")
-public class DepartmentController {
+@RequestMapping("api/department")
+public class  DepartmentController {
     private DepartmentService departmentService;
 
     public DepartmentController(DepartmentService departmentService) {
@@ -22,9 +22,10 @@ public class DepartmentController {
         return new ResponseEntity<>(departmentDto1, HttpStatus.CREATED);
     }
 
-    @GetMapping("{department-code}`")
+    @GetMapping("{department-code}")
     public ResponseEntity<DepartmentDto> getDepartment(@PathVariable(value = "department-code") String departmentCode){
         DepartmentDto departmentDto = departmentService.getDepartmentByDepartmentCode(departmentCode);
         return new ResponseEntity<>(departmentDto,HttpStatus.OK);
     }
+
 }

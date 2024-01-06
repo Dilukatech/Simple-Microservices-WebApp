@@ -33,8 +33,8 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public DepartmentDto getDepartmentByDepartmentCode(String departmentCode) {
-       Department department = departmentRepo.findDepartmentByDepartmentCode(departmentCode);
+    public DepartmentDto getDepartmentByDepartmentCode(String code) {
+       Department department = departmentRepo.findByDepartmentCode(code);
 
        DepartmentDto departmentDto = new DepartmentDto(
                department.getId(),
